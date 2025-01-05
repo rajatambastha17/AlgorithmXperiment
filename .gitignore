@@ -1,24 +1,80 @@
-# Compiled class file
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Ignore build output folders
+/out/
+target/
+build/
+bin/
+
+# Ignore class files
 *.class
 
-# Log file
+# Ignore logs and other temporary files
 *.log
+*.bak
+*.swp
+*.swo
+*.tmp
+*.temp
 
-# BlueJ files
-*.ctxt
+# Ignore OS-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Ignore Maven directories
+/.mvn/
+/target/
 
-# Package Files #
+# Ignore Gradle directories
+.gradle/
+/build/
+
+# Ignore JARs, WARs, and other artifacts
 *.jar
 *.war
-*.nar
 *.ear
-*.zip
 *.tar.gz
-*.rar
+*.zip
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Ignore dependency directories for Maven/Gradle
+/.idea/libraries/
+
+# Ignore project-specific files like IntelliJ's workspace file
+.idea/modules.xml
+.idea/workspace.xml
+.idea/*.iml
+.idea/*.iws
+.idea/.name
+.idea/misc.xml
+.idea/vcs.xml
+.idea/dictionaries/
+
+# Ignore IntelliJ-specific caches
+.idea/.idea/
+.idea/cache/
+
+# Ignore IntelliJ configuration for version control
+.idea/.gitignore
+
+# Ignore JetBrains IDE-specific files
+.idea/.idea/modules.xml
+.idea/.idea/misc.xml
+
+# Ignore build-specific files for Kotlin/Java
+*.log
+
+# Ignore test coverage reports
+/coverage/
+
+# Ignore system-specific and IDE-specific files
+.vscode/
+*.sublime-workspace
+*.sublime-project
+.idea/.idea/
+
+# Ignore local IDE-specific directories or files
+/.idea/
