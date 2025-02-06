@@ -1,8 +1,12 @@
 package com.preps.questions;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class SeriesWithoutLoop {
 
-//    int a = 0;
+    //    int a = 0;
     public static void series(int input, int range) {
         if (input <= range) {
             System.out.print(input + " ");
@@ -15,5 +19,7 @@ public class SeriesWithoutLoop {
         int input = 3;
         int range = 20;
         series(input, range);
+        List<String> list = new ArrayList<>();
+        Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
     }
 }
