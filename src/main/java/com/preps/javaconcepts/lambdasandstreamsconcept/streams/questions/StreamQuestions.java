@@ -26,7 +26,10 @@ public class StreamQuestions {
 //        s.question13();
 //        s.question14();
 //        s.question15();
-        s.question16();
+//        s.question16();
+//        s.question17();
+//        s.question18();
+        s.question19();
     }
 
     //  Find the longest string in a list of strings using Java streams
@@ -39,15 +42,18 @@ public class StreamQuestions {
 
     // Calculate the average age of a list of Person objects using Java streams
     public void question2() {
-        Person p1 = new Person("Rajat", 27);
-        Person p2 = new Person("Palak", 25);
-        Person p3 = new Person("Anushri", 29);
-        Person p4 = new Person("Lipi", 27);
-        Person p5 = new Person("Rahul", 32);
+        Person p1 = new Person("Rajat", 27, 2019);
+        Person p2 = new Person("Palak", 25, 2021);
+        Person p3 = new Person("Anushri", 29, 2022);
+        Person p4 = new Person("Lipi", 27, 2018);
+        Person p5 = new Person("Rahul", 32, 2011);
 
         List<Person> personList = Arrays.asList(p1, p2, p3, p4, p5);
         double average = personList.stream().mapToInt(Person::getAge).average().orElse(0);
         System.out.println(average + "\n");
+
+        List<Person> result = personList.stream().filter(person -> person.getYearOfJoining() <= 2019).toList();
+        System.out.println("People joined before or in 2019: \n" + result);
     }
 
     // Check if a list of integers contains a prime number using Java streams
@@ -129,22 +135,67 @@ public class StreamQuestions {
         System.out.println("All even numbers squared from the list are: " + evenSquaredList + "\n");
     }
 
+    // Given a stream of Strings, return a stream containing the uppercase of strings with length more than 5.
     public void question14() {
         List<String> strings = Arrays.asList("Blueberry", "Kiwi", "Pomegranate", "Watermelon", "Guava", "Pear", "Banana", "Apple", "Strawberry");
         List<String> resultString = strings.stream().filter(string -> string.length() > 5).map(String::toUpperCase).toList();
         System.out.println("Uppercase strings whose length is more than 5: " + resultString);
     }
 
+    // Given a stream of integers, return the largest number from the list.
     public void question15() {
         List<Integer> integerList = Arrays.asList(1, 83, 5, 7, 9, 22, 2, 4, 6, 11, 12, 14, 17, 18, 20, 233, 19);
         int result = integerList.stream().mapToInt(Integer::intValue).max().getAsInt();
         System.out.println("Largest number from the List is: " + result + "\n");
     }
 
+    // Given a stream of strings, return a map containing key as the length of the string and value as the strings with same length.
     public void question16() {
         List<String> strings = Arrays.asList("Blueberry", "Kiwi", "Pomegranate", "Watermelon", "Guava", "Pear", "Banana", "Apple", "Strawberry");
         Map<Integer, List<String>> result = strings.stream().collect(Collectors.groupingBy(String::length));
         System.out.println("Map of Strings with length as key: " + result + "\n");
+    }
+
+    public void question17() {
+        Person p1 = new Person("Rajat", 27, 2019);
+        Person p2 = new Person("Palak", 25, 2021);
+        Person p3 = new Person("Anushri", 29, 2022);
+        Person p4 = new Person("Lipi", 27, 2018);
+        Person p5 = new Person("Rahul", 32, 2011);
+
+        List<Person> personList = Arrays.asList(p1, p2, p3, p4, p5);
+
+        // Sorting by age
+        List<Person> result = personList.stream().sorted(Comparator.comparingInt(Person::getAge)).toList();
+//        result.forEach(System.out::println);
+//        System.out.println();
+
+        // Sorting by name
+        result = personList.stream().sorted(Comparator.comparing(Person::getName)).toList();
+//        result.forEach(System.out::println);
+        result.stream().filter(person -> person.getAge() > 27).forEach(System.out::println);
+
+        List<String> names = Arrays.asList("Reflection", "Collection", "Stream", "Structure", "Sorting", "State");
+        String concatenatedNames = names.stream().reduce("", (partialString, element) -> partialString + " " + element);
+        System.out.println("\nreduce (concatenated names):");
+        System.out.println(concatenatedNames.trim());
+    }
+
+    // Given a list of strings, combine all the strings into one
+    public void question18() {
+        List<String> strings = Arrays.asList("Blueberry", "Kiwi", "Pomegranate", "Watermelon", "Guava", "Pear", "Banana", "Apple", "Strawberry");
+        System.out.println(strings.stream().count());
+        String str = strings.stream().reduce("", (a, b) -> a + b);
+        System.out.println(str);
+    }
+
+    // Given a stream of strings, return a stream containing only the strings that start with the letter 'A' (case-insensitive).
+    public void question19() {
+        List<String> strings = Arrays.asList("zeshan", "Ashley", "Anushri", "Ashwini", "Bernie", "Natasha", "Simran", "Rahul", "Aman", "Aryan");
+        List<String> result = strings.stream().filter(string -> string.startsWith("A")).toList();
+        strings.sort(String::compareToIgnoreCase);
+        System.out.println(strings);
+        System.out.println("Strings starting with 'A': " + result + "\n");
     }
 
     private boolean isPrime(int number) {
@@ -166,4 +217,5 @@ public class StreamQuestions {
 class Person {
     private String name;
     private int age;
+    private int yearOfJoining;
 }

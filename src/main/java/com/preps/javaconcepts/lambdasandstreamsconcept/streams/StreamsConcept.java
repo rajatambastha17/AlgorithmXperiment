@@ -1,9 +1,6 @@
 package com.preps.javaconcepts.lambdasandstreamsconcept.streams;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StreamsConcept {
@@ -24,8 +21,8 @@ public class StreamsConcept {
                 .map(String::toUpperCase) // Transform each element to uppercase
                 .distinct() // Remove duplicate elements
                 .sorted() // Sort elements
-                .peek(s -> intermediateResults.add(s)) // Perform an action (add to set) on each element
-                .collect(Collectors.toList()); // Collect the final result into a list
+                .peek(intermediateResults::add) // Perform an action (add to set) on each element
+                .toList(); // Collect the final result into a list
 
         // Print the intermediate results
         System.out.println("Intermediate Results:");

@@ -17,6 +17,7 @@ public class SumCheckerAskedInMedallia {
         System.out.printf("Checking 10 expected 'true', got: '%s'.%n", sumChecker.canSum(10));
         sumChecker.store(8);
         sumChecker.store(6);
+        sumChecker.store(10);
         System.out.printf("Checking 18 expected 'false', got: '%s'.%n", sumChecker.canSum(18));
         System.out.printf("Checking 13 expected 'true', got: '%s'.%n", sumChecker.canSum(13));
         System.out.printf("Checking 14 expected 'true', got: '%s'.%n", sumChecker.canSum(14));
