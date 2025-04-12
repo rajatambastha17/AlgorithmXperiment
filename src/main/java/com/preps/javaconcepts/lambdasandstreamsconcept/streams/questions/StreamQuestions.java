@@ -38,6 +38,7 @@ public class StreamQuestions {
         Optional<String> res = strings.stream().max(Comparator.comparingInt(String::length));
         List<String> string = strings.stream().filter(s -> (s.startsWith("B"))).toList();
         System.out.println(string + "\n");
+        Collections.sort(strings, String.CASE_INSENSITIVE_ORDER);
     }
 
     // Calculate the average age of a list of Person objects using Java streams

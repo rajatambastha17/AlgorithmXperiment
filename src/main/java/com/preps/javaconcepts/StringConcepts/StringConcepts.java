@@ -1,6 +1,7 @@
 package com.preps.javaconcepts.StringConcepts;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.stream.Stream;
 
 public class StringConcepts {
@@ -22,6 +23,10 @@ public class StringConcepts {
         System.out.println("== method for s2 and s3 returns: " + (s2 == s3));
 
         String subEx = "This is an example of substring";
+        String[] arr = subEx.split(" ");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
 
 //      Returns the index from where the substring is started
         int index = subEx.lastIndexOf("ple");
@@ -32,6 +37,5 @@ public class StringConcepts {
 
 //      Printing the string array
         Arrays.stream(stringArray).forEach(System.out::println); //This will print the array elements
-
     }
 }

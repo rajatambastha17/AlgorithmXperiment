@@ -1,8 +1,10 @@
 package com.preps.javaconcepts.collectionsconcepts;
 
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CollectionsConcept {
+
 
     public static void main(String[] args) {
         List<String> stringArrayList = new ArrayList<>();
@@ -62,6 +64,7 @@ public class CollectionsConcept {
         Set<Integer> inte = new TreeSet<>();
         TreeSet<Integer> inte2 = new TreeSet<>();
 
+        List<Integer> in = new CopyOnWriteArrayList<>();
 
     }
 }
