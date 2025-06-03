@@ -33,6 +33,6 @@ public class GroupAnagram {
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat", "tab"};
         List<List<String>> result = groupAnagramsTogether(strs);
         System.out.println(result);
-        System.out.println("Are the given string anagram? " + isAnagram("gregory", "groreggy"));
+        System.out.println("Are the given string anagram? " + isAnagram("gregory", "grerogy"));
     }
 }
