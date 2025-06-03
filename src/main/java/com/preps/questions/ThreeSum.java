@@ -5,49 +5,13 @@ import java.util.*;
 public class ThreeSum {
 
     public static void main(String[] args) {
-//        int size = 100; // Adjust size as needed, but be mindful of performance
-//        int[] input = generateLargeArray(size);
         int[] input = {-1, 0, 1, 2, -1, -4};
 
         long start = System.currentTimeMillis();
-        List<List<Integer>> result = threeSumOptimised(input);
+
         long end = System.currentTimeMillis();
 
-        System.out.println(result);
         System.out.println("Time taken: " + (end - start));
-//        long start = System.currentTimeMillis();
-//        System.out.println(threeSum(largeArray));
-//        long end = System.currentTimeMillis();
-//        System.out.println("Time taken: " + (end - start));
-    }
-
-    public static List<List<Integer>> threeSumOptimised(int[] input) {
-        Arrays.sort(input);
-        List<List<Integer>> result = new ArrayList<>();
-        List<Integer> triplets;
-        for (int i = 0; i < input.length; i++) {
-            int left = i + 1;
-            int right = input.length - 1;
-            int targetNum = -input[i];
-            while (left < right) {
-                int sum = input[left] + input[right];
-                if (sum == targetNum) {
-                    triplets = new ArrayList<>();
-                    triplets.add(input[i]);
-                    triplets.add(input[left]);
-                    triplets.add(input[right]);
-                    result.add(triplets);
-                    if (input[left + 1] != input[i]) {
-                        left++;
-                    }
-                } else if (sum < targetNum) {
-                    left++;
-                } else {
-                    right--;
-                }
-            }
-        }
-        return result.stream().toList();
     }
 
     public static List<List<Integer>> threeSumOptimised2(int[] nums) {
@@ -106,15 +70,5 @@ public class ThreeSum {
             }
         }
         return result;
-    }
-
-    public static int[] generateLargeArray(int size) {
-        int[] array = new int[size];
-        Random random = new Random();
-        for (int i = 0; i < size; i++) {
-            // Generate random integers within a range
-            array[i] = random.nextInt(999) - 100; // Range: -1000 to 1000
-        }
-        return array;
     }
 }
