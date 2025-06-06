@@ -5,16 +5,16 @@ import java.util.*;
 public class ThreeSum {
 
     public static void main(String[] args) {
-        int[] input = {-1, 0, 1, 2, -1, -4};
+        int[] nums = {-1, 0, 1, 2, -1, -4};
 
         long start = System.currentTimeMillis();
-
+        List<List<Integer>> result = threeSumOptimised(nums);
         long end = System.currentTimeMillis();
-
+        System.out.println("Triplets: " + result);
         System.out.println("Time taken: " + (end - start));
     }
 
-    public static List<List<Integer>> threeSumOptimised2(int[] nums) {
+    public static List<List<Integer>> threeSumOptimised(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
 
         // Step 1: Sort the array
