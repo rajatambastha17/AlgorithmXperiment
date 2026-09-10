@@ -37,5 +37,21 @@ public class StringConcepts {
 
 //      Printing the string array
         Arrays.stream(stringArray).forEach(System.out::println); //This will print the array elements
+
+        String sss = "@@ rtx.ct.event@@";
+        sss = sss.replaceFirst("@@", "&lt%=").replaceFirst("@@", "%>");
+        System.out.println("Replaced: " + sss);
+
+        int x = 8;
+        System.out.println("Endava wala");
+        System.out.println(++x + x++ + ++x);
+
+        System.out.println(7 + 3 + "Java" + 7 + 3);
+
+        StringBuffer sb = new StringBuffer("Hello");
+        StringBuffer sb1 = sb;
+        sb.append(" World");
+        System.out.println("Sb1 is: " + sb1);
+
     }
 }

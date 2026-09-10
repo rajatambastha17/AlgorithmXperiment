@@ -12,7 +12,7 @@ public class CharCountInString {
 
     public static void main(String[] args) {
 //        String input = "aaaaaabbbbcccdeefffffffggggggggghhhiizzzzzzzzzzzzzz";
-        String input = "abcvffff";
+        String input = "aaaabbbbbccccvvvvffffffff";
         System.out.println(countInString(input));
     }
 

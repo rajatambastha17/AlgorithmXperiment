@@ -20,4 +20,13 @@ public class MountainBike extends Bicycle {
         return (super.toString() + "\nseat height is "
                 + seatHeight);
     }
+
+    @Override
+    public String oilUsed() {
+        return "mountain bike oil";
+    }
+
+//    public String getBikeName(){
+//        return "MBike";
+//    }
 }

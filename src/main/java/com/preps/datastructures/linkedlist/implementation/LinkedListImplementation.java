@@ -66,4 +66,20 @@ public class LinkedListImplementation {
         }
         current.next = current.next.next;
     }
+
+    // New method to reverse the linked list
+    public void reverseList() {
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+
+        while (current != null) {
+            next = current.next;    // Save the next node
+            current.next = prev;    // Reverse the link
+            prev = current;         // Move prev one step
+            current = next;         // Move current one step
+        }
+
+        head = prev; // Update head to the last node (new first node)
+    }
 }

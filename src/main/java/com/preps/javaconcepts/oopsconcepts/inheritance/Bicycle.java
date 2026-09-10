@@ -23,6 +23,14 @@ public class Bicycle {
         speed += increment;
     }
 
+    public String oilUsed() {
+        return "Standard Oil";
+    }
+
+    public void getBikeName(){
+        System.out.println("normal bike");
+    }
+
     // toString() method to print info of Bicycle
     public String toString() {
         return ("No of gears are " + gear + "\n"

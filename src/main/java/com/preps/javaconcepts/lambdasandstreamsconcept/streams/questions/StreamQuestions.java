@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 public class StreamQuestions {
     public static void main(String[] args) {
         StreamQuestions s = new StreamQuestions();
-//        s.question1();
+        s.question1();
 //        s.question2();
 //        s.question3();
 //        s.question4();
@@ -29,16 +29,17 @@ public class StreamQuestions {
 //        s.question16();
 //        s.question17();
 //        s.question18();
-        s.question19();
+//        s.question19();
     }
 
     //  Find the longest string in a list of strings using Java streams
     private void question1() {
-        List<String> strings = Arrays.asList("Blueberry", "Kiwi", "Pomegranate", "Watermelon", "Guava", "Pear", "Banana", "Apple");
+        List<String> strings = Arrays.asList("apple", "guava", "Guava", "Blueberry", "Kiwi", "Pomegranate", "Watermelon", "Guava", "Pear", "Banana", "Apple");
         Optional<String> res = strings.stream().max(Comparator.comparingInt(String::length));
         List<String> string = strings.stream().filter(s -> (s.startsWith("B"))).toList();
         System.out.println(string + "\n");
         Collections.sort(strings, String.CASE_INSENSITIVE_ORDER);
+        System.out.println(strings);
     }
 
     // Calculate the average age of a list of Person objects using Java streams
@@ -198,6 +199,7 @@ public class StreamQuestions {
         System.out.println(strings);
         System.out.println("Strings starting with 'A': " + result + "\n");
     }
+
 
     private boolean isPrime(int number) {
         if (number <= 1) {

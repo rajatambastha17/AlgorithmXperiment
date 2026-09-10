@@ -21,5 +21,7 @@ public class LinkedListRunner {
         System.out.println("Does 56 exist in the list?\n" + doesKeyExist);
         linkedList.deleteKeyByValue(22);
         linkedList.traverse();
+        linkedList.reverseList();
+        linkedList.traverse();
     }
 }
