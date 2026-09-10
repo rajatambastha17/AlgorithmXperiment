@@ -3,16 +3,16 @@ package com.preps.questions;
 public class ProductExceptSelf {
 
     public static void main(String[] args) {
-        int[] input = {1, 2, 3, 4};
-//        int[] output = productExceptSelfOptimised(input);
-//        for (int item : output) {
-//            System.out.print(item + " ");
-//        }
-
-        int[] output = productExceptSelfExtraSpace(input);
+        int[] input = {4, 6, 8, 2};
+        int[] output = productExceptSelfOptimised(input);
         for (int item : output) {
             System.out.print(item + " ");
         }
+
+//        int[] output = productExceptSelfExtraSpace(input);
+//        for (int item : output) {
+//            System.out.print(item + " ");
+//        }
         System.out.println();
     }
 

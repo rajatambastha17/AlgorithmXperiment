@@ -1,0 +1,57 @@
+package com.preps.javaconcepts.StringConcepts;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.stream.Stream;
+
+public class StringConcepts {
+
+    public static void main(String[] args) {
+
+//      Both of these share a same memory address in heap and the string constant pool
+        String s1 = "My name is Anthony";
+        String s2 = "My name is Anthony";
+
+//      This represents a new String. It has the same value but different memory address
+        String s3 = new String("My name is Anthony");
+        System.out.println("Eqauls method for s1 and s2 returns: " + (s1.equals(s2)));
+        System.out.println("Eqauls method for s1 and s3 returns: " + (s1.equals(s3)));
+        System.out.println("Eqauls method for s2 and s3 returns: " + (s2.equals(s3)));
+
+        System.out.println("== method for s1 and s2 returns: " + (s1 == s2));
+        System.out.println("== method for s1 and s3 returns: " + (s1 == s3));
+        System.out.println("== method for s2 and s3 returns: " + (s2 == s3));
+
+        String subEx = "This is an example of substring";
+        String[] arr = subEx.split(" ");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+
+//      Returns the index from where the substring is started
+        int index = subEx.lastIndexOf("ple");
+        System.out.println(index + "\n");
+
+//      This splits the given string into string array
+        String[] stringArray = subEx.split(" ");
+
+//      Printing the string array
+        Arrays.stream(stringArray).forEach(System.out::println); //This will print the array elements
+
+        String sss = "@@ rtx.ct.event@@";
+        sss = sss.replaceFirst("@@", "&lt%=").replaceFirst("@@", "%>");
+        System.out.println("Replaced: " + sss);
+
+        int x = 8;
+        System.out.println("Endava wala");
+        System.out.println(++x + x++ + ++x);
+
+        System.out.println(7 + 3 + "Java" + 7 + 3);
+
+        StringBuffer sb = new StringBuffer("Hello");
+        StringBuffer sb1 = sb;
+        sb.append(" World");
+        System.out.println("Sb1 is: " + sb1);
+
+    }
+}

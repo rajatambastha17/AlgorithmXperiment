@@ -3,7 +3,7 @@ package com.preps.questions;
 public class IsPalindrome {
 
     public static void main(String[] args) {
-        String input = "Was it a car or a cat II saw";
+        String input = "Was it a car or a cat I saw";
         boolean result = isPalindrome(input);
         System.out.println(result);
     }

@@ -16,9 +16,23 @@ public class GroupAnagram {
         return new ArrayList<>(resultMap.values());
     }
 
+    public static boolean isAnagram(String in1, String in2) {
+        if (in1.length() != in2.length()) {
+            return false;
+        }
+        char[] first = in1.toCharArray();
+        char[] second = in1.toCharArray();
+        Arrays.sort(first);
+        Arrays.sort(second);
+        in1 = new String(first);
+        in2 = new String(second);
+        return in1.equalsIgnoreCase(in2);
+    }
+
     public static void main(String[] args) {
-        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat", "tab"};
         List<List<String>> result = groupAnagramsTogether(strs);
         System.out.println(result);
+        System.out.println("Are the given string anagram? " + isAnagram("gregory", "grerogy"));
     }
 }
